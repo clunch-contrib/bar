@@ -1,5 +1,5 @@
 # bar
-📊 柱状图组件，包括直方柱状图和极坐标柱状图等常见的柱状图。 
+📊 柱状图组件，包括直方柱状图和极坐标柱状图等常见的柱状图。
 
 ## 联系我们
 
@@ -10,4 +10,4 @@
 ---------------------------------------
 [MIT](https://github.com/clunch-contrib/bar/blob/master/LICENSE)
 
-Copyright (c) 2020-2021 [hai2007](https://hai2007.gitee.io/sweethome/) 走一步，再走一步。
+Copyright (c) 2021 [hai2007](https://hai2007.gitee.io/sweethome/) 走一步，再走一步。
