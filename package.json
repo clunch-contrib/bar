@@ -1,0 +1,24 @@
+{
+  "name": "@clunch/bar",
+  "version": "0.0.0-alpha",
+  "description": "📊 柱状图组件，包括直方柱状图和极坐标柱状图等常见的柱状图。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clunch-contrib/bar.git"
+  },
+  "keywords": [
+    "clunch",
+    "contrib",
+    "bar"
+  ],
+  "author": "你好2007",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clunch-contrib/bar/issues"
+  },
+  "homepage": "https://github.com/clunch-contrib/bar#readme"
+}
