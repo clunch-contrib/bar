@@ -11,7 +11,7 @@
 
 ## 如何使用？
 
-首先，需要安装npm包（目前我们中支持npm方式管理）：
+首先，需要安装npm包（目前我们仅支持npm方式管理）：
 
 ```
 npm install --save clunch @clunch/bar
