@@ -108,6 +108,50 @@ export default ['number', 'string', 'json', '$ruler', '$getLoopColors', function
                     }
                 });
 
+                var i, j, valueLength, beginRadius;
+
+                var dist_deg = Math.PI * 2 / attr.data.length;
+                var item_deg = (dist_deg * 0.9) / attr.data[0].length;
+
+                var lenghtTemp = radiusValue / (ruler.max - ruler.min);
+
+                var xs = [];
+                for (var k = 0; k < attr.data[0].length; k++) {
+                    xs.push(dist_deg * 0.05 + k * item_deg);
+                }
+
+                // 绘制小条目
+                for (i = 0; i < attr.data.length; i++) {
+                    for (j = 0; j < attr.data[i].length; j++) {
+
+                        painter.config('fillStyle', attr.colors[j]);
+
+                        // 刻度尺不包含0
+                        if ((ruler.max > 0 && ruler.min > 0) || (ruler.max < 0 && ruler.min < 0)) {
+                            if (ruler.min < 0) {
+                                beginRadius = radiusValue;
+                                valueLength = (attr.data[i][j] - ruler.min) * lenghtTemp - radiusValue;
+                            } else {
+                                beginRadius = 0;
+                                valueLength = (attr.data[i][j] - ruler.min) * lenghtTemp;
+                            }
+                        }
+
+                        // 刻度尺包含0
+                        else {
+                            beginRadius = (0 - ruler.min) * lenghtTemp;
+                            valueLength = attr.data[i][j] * lenghtTemp;
+                        }
+
+                        painter.fillArc(
+                            attr.x + attr.width * 0.5, attr.y + attr.height * 0.5,
+                            beginRadius, valueLength + beginRadius,
+                            i * dist_deg + xs[j] - Math.PI * 0.5, item_deg
+                        );
+
+                    }
+                }
+
             } else {
 
                 // Y刻度尺
@@ -151,12 +195,17 @@ export default ['number', 'string', 'json', '$ruler', '$getLoopColors', function
                 for (i = 0; i < attr.data.length; i++) {
                     for (j = 0; j < attr.data[i].length; j++) {
 
-                        painter.config('strokeStyle', attr.colors[j])
+                        painter.config('strokeStyle', attr.colors[j]);
 
                         // 刻度尺不包含0
                         if ((ruler.max > 0 && ruler.min > 0) || (ruler.max < 0 && ruler.min < 0)) {
-                            y = attr.y + attr.height - 50;
-                            valueLength = (attr.data[i][j] - ruler.min) * lenghtTemp;
+                            if (ruler.min < 0) {
+                                y = attr.y + 50;
+                                valueLength = (ruler.min - attr.data[i][j]) * lenghtTemp;
+                            } else {
+                                y = attr.y + attr.height - 50;
+                                valueLength = (attr.data[i][j] - ruler.min) * lenghtTemp;
+                            }
                         }
 
                         // 刻度尺包含0
