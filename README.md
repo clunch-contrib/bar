@@ -1,6 +1,8 @@
 # bar
 📊 柱状图组件，包括直方柱状图和极坐标柱状图等常见的柱状图。
 
+<p align='center'><img height='300' src='./view-normal.png'></p>
+
 <p>
   <a href="https://hai2007.gitee.io/npm-downloads?interval=7&packages=@clunch/bar"><img src="https://img.shields.io/npm/dm/@clunch/bar.svg" alt="downloads"></a>
   <a href="https://www.npmjs.com/package/@clunch/bar"><img src="https://img.shields.io/npm/v/@clunch/bar.svg" alt="Version"></a>
@@ -43,7 +45,7 @@ Clunch.series('ui-bar',bar);
 |y|number|图形左上角位置纵坐标|0||
 |width|number|图形宽|画布的宽||
 |height|number|图形高|画布的高||
-|type|string|图形的类型|normal|normal、circle|
+|type|string|图形的类型|normal|normal、circle（暂不支持）|
 |colors|Array\<string\>|柱状条颜色|内置循环色||
 |max-value|number|最大值|动态计算得出||
 |min-value|number|最小值|动态计算得出||

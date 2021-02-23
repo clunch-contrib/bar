@@ -133,6 +133,45 @@ export default ['number', 'string', 'json', '$ruler', '$getLoopColors', function
                     }
                 });
 
+                var i, j, valueLength, y;
+
+                var dist_width = (attr.width - 100) / attr.data.length;
+                var item_width = (dist_width * 0.9) / attr.data[0].length;
+
+                var lenghtTemp = (attr.height - 100) / (ruler.max - ruler.min);
+
+                var xs = [];
+                for (var k = 0; k < attr.data[0].length; k++) {
+                    xs.push(dist_width * 0.05 + (k + 0.5) * item_width);
+                }
+
+                painter.config('lineWidth', item_width);
+
+                // 绘制小条目
+                for (i = 0; i < attr.data.length; i++) {
+                    for (j = 0; j < attr.data[i].length; j++) {
+
+                        painter.config('strokeStyle', attr.colors[j])
+
+                        // 刻度尺不包含0
+                        if ((ruler.max > 0 && ruler.min > 0) || (ruler.max < 0 && ruler.min < 0)) {
+                            y = attr.y + attr.height - 50;
+                            valueLength = (attr.data[i][j] - ruler.min) * lenghtTemp;
+                        }
+
+                        // 刻度尺包含0
+                        else {
+                            y = attr.y + attr.height - 50 + ruler.min * lenghtTemp;
+                            valueLength = (attr.data[i][j]) * lenghtTemp;
+                        }
+
+                        painter.beginPath()
+                            .moveTo(attr.x + 50 + dist_width * i + xs[j], y)
+                            .lineTo(attr.x + 50 + dist_width * i + xs[j], y - valueLength)
+                            .stroke();
+                    }
+                }
+
             }
 
         }
