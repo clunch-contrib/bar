@@ -52,7 +52,7 @@ Clunch.series('ui-bar',bar);
 
 由于此组件是基于[Clunch](https://github.com/hai2007/clunch)开发的，我们默认你已经掌握了相关知识。
 
-[<< 你可以点击此次学习Clunch.js如何使用](https://hai2007.gitee.io/clunch/#/course/introduce?fixed=top)
+[<< 你可以点击此处学习Clunch.js如何使用](https://hai2007.gitee.io/clunch/#/course/introduce?fixed=top)
 
 ## 联系我们
 
