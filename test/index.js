@@ -14,5 +14,10 @@ window.clunch = new (Clunch.series('ui-bar', bar))({
             data5: [120, 120, 130, 140, 120, 130, 140, 150, 120, 150, 150, 110]
         };
     },
-    render: image
+    render: image,
+    methods: {
+        doit(target) {
+            console.log(target);
+        }
+    }
 });

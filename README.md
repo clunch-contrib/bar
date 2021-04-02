@@ -55,6 +55,47 @@ Clunch.series('ui-bar',bar);
 
 [<< 你可以点击此处学习Clunch.js如何使用](https://hai2007.gitee.io/clunch/#/course/introduce?fixed=top)
 
+## 交互事件
+
+图形绘制完成以后，我们可能还需要图形是可交互的，比如鼠标点击某个条目，可以提示对应的信息。
+
+那么，我们可以对```.clunch```改造一下：
+
+```html
+<ui-bar data='Array' ruler='Array<String>' c-on:click='doit' />
+```
+
+然后，在```new Clunch```的时候添加```doit方法```：
+
+```js
+new Clunch({
+    ......
+    methods:{
+        doit(target){
+            console.log(target);
+        }
+    }
+});
+```
+
+打印的结果如下：
+
+```js
+target = {
+    attr:当前组件的属性值
+    data:你点击区域的信息
+    left:点击位置的横坐标
+    top:点击位置的纵坐标
+    region:点击区域名称
+    subRegion:点击子区域名称
+    ......
+}
+```
+
+其中，target.subRegion的格式举例子：```'1-3'```，表示你点击的是第二组的第四个条目。
+
+这样子，你就可以添加弹框或者悬浮提示来实现和绘制图形的交互了！
+
 开源协议
 ---------------------------------------
 [MIT](https://github.com/clunch-contrib/bar/blob/master/LICENSE)
