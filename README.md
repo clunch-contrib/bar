@@ -97,7 +97,7 @@ target = {
 这样子，你就可以添加弹框或者悬浮提示来实现和绘制图形的交互了！
 
 开源协议
----------------------------------------
+--------------------------------------- 
 [MIT](https://github.com/clunch-contrib/bar/blob/master/LICENSE)
 
 Copyright (c) 2021 [hai2007](https://hai2007.gitee.io/sweethome/) 走一步，再走一步。
