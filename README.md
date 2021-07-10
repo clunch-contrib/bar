@@ -1,8 +1,8 @@
 # bar
 📊 柱状图组件，包括直方柱状图和极坐标柱状图等常见的柱状图。
 
-<p align='center'><img height='300' src='./view-normal.png'></p>
-<p align='center'><img height='300' src='./view-circle.png'></p>
+<p align='center'><img src='./view-normal.png'></p>
+<p align='center'><img src='./view-circle.png'></p>
 
 <p>
   <a href="https://hai2007.gitee.io/npm-downloads?interval=7&packages=@clunch/bar"><img src="https://img.shields.io/npm/dm/@clunch/bar.svg" alt="downloads"></a>
